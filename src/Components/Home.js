@@ -11,8 +11,10 @@ export default function Home() {
     },[dispatch])
 
     
-    let pictures = nasaDetails.map(details => details.photos.map(details => <Pictures {...details}/>))
-    
+    let pictures = nasaDetails.map(details => details.photos.slice(0,100).map(marsDetails => <Pictures {...marsDetails}/>))
+ 
+
+    console.log(pictures)
     
 
     return (
