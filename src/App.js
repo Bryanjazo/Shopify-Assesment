@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from './Components/Home'
-import Header from './Components/Header/header'
+import NavBar from './Components/Navbar/Navbar'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +13,7 @@ function App() {
   return (
   <Router>
     <div className="App">
-      <Header />
+      <NavBar />
        <Switch>
           <Route path="/">
             <Home />
