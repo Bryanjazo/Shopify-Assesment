@@ -40,6 +40,10 @@ export default function Pictures(props) {
     setExpanded(!expanded);
   };
 
+  const handleClick = (e) =>{
+      e.preventDefault()
+  }
+
   return (
     <Grid
     container
@@ -67,10 +71,12 @@ export default function Pictures(props) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
+        <IconButton onClick={handleClick} aria-label="add to favorites">
+          <FavoriteIcon style={{fill: {}}}/>
+        </IconButton>   
+        <IconButton aria-label="share">
+          <ShareIcon />
         </IconButton>
-       
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -84,11 +90,11 @@ export default function Pictures(props) {
         <CardContent>
           <Typography paragraph>
 
-            Id:{props.rover.id},<br></br>
-            Camera Name: {props.camera.full_name},<br></br>
-            Date Launched: {props.rover.launch_date},<br></br>
-            Date Landed: {props.rover.landing_date},<br></br>
-            Active Status: {props.rover.status === 'active' ? 'true' : 'false'}
+          <b>Id: </b>{props.rover.id}<br></br>
+          <b>Camera Name</b> {props.camera.full_name}<br></br>
+          <b> Date Launched:</b> {props.rover.launch_date}<br></br>
+          <b> Date Landed:</b>  {props.rover.landing_date}<br></br>
+          <b> Active Status:</b>  {props.rover.status === 'active' ? 'true' : 'false'}
           </Typography>
         </CardContent>
       </Collapse>
