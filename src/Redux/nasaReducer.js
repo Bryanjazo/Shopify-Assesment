@@ -17,12 +17,16 @@ export const getMarsRoverDetails = createAsyncThunk(
 const nasaStore = createSlice({
     name: "nasa",
     initialState:{
-      nasaDetails: []
+      nasaDetails: [],
+      heartColor: false
       
     },
     reducers:{
       setNasaDetails: (state, action) => {
         state.nasaDetails.push(action.payload)
+      },
+      setHeartStatus: (state, action) => {
+          state.heartColor = action.payload
       }
     },
     extraReducers: (builder) => {
@@ -34,5 +38,5 @@ const nasaStore = createSlice({
   
   })
 
-  export const {setNasaDetails} = nasaStore.actions
+  export const {setNasaDetails,setHeartStatus} = nasaStore.actions
   export default nasaStore.reducer
