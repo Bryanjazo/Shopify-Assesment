@@ -30,13 +30,13 @@ function NavBar(){
     <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
 
         <li >
-        <Link className="nav-links" to="/Home">
+        <Link className="nav-links" to="/">
             Home
         </Link>
           <Link className="nav-links" to="/Search">
-            Search By Date
+            Daily Astrology Picture
         </Link>
-      
+    
         </li>
     </ul>
    

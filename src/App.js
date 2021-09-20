@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react'
 import Home from './Components/Home'
 import NavBar from './Components/Navbar/Navbar'
 import {useDispatch,useSelector} from 'react-redux'
+import Search from './Components/Search/Search'
 import {
   BrowserRouter as Router,
   Switch,
@@ -45,7 +46,10 @@ function App() {
       <NavBar />
      
        <Switch>
-     
+        <Route to='/Search'>
+        {loading === false ? <Search /> : <GridLoader css={override} color={'#6854fc'} loading={loading} size={50} />}
+    
+        </Route>
           <Route path="/">
         {loading === false ? <Home /> : <GridLoader css={override} color={'#6854fc'} loading={loading} size={50} />}
           </Route>
