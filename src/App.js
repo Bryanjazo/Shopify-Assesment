@@ -17,7 +17,6 @@ import * as ReactBootStrap from 'react-bootstrap'
 function App() {
   const dispatch = useDispatch()
   const [loading, setLoading] = useState(false)
-  console.log(loading, 'loading')
   const override = css`
   position: fixed;
   top: 50%;
@@ -29,6 +28,7 @@ function App() {
     try {
       setLoading(true)
       const data = await dispatch(getMarsRoverDetails())
+  
       setLoading(false)
     } catch (error) {
       console.log(error)
@@ -46,10 +46,9 @@ function App() {
       <NavBar />
      
        <Switch>
-        <Route to='/Search'>
-        {loading === false ? <Search /> : <GridLoader css={override} color={'#6854fc'} loading={loading} size={50} />}
-    
-        </Route>
+       <Route path="/Search">
+        <Search />
+       </Route>
           <Route path="/">
         {loading === false ? <Home /> : <GridLoader css={override} color={'#6854fc'} loading={loading} size={50} />}
           </Route>

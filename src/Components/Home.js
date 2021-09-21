@@ -7,7 +7,7 @@ export default function Home() {
     const {nasaDetails} = useSelector((state) => state.nasa)
   
 
-    
+    console.log(nasaDetails,'nasa')
     let pictures = nasaDetails.map(details => details.photos.slice(0,100).map(marsDetails => <Pictures {...marsDetails}/>))
  
 

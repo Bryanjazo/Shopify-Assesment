@@ -16,10 +16,10 @@ import { red } from '@mui/material/colors';
 import {FacebookShareButton, FacebookIcon,TwitterIcon,TwitterShareButton,LinkedinShareButton,LinkedinIcon} from "react-share";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import Heart from "react-animated-heart";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Grid from '@material-ui/core/Grid';
+import Heart from "react-animated-heart";
 
 
 const ExpandMore = styled((props) => {
@@ -35,10 +35,10 @@ const ExpandMore = styled((props) => {
 }));
 
 
-export default function Pictures(props) {
+export default function SearchCard(props) {
     console.log(props)
   const [expanded, setExpanded] = React.useState(false);
-  
+  const [heartStatusFalse,setHeartStatusFalse] = React.useState(false)
   const [heartStatusTrue,setHeartStatusTrue] = React.useState(true)
   const [heartStatus, setHeartStatus] = React.useState(false)
   const status = localStorage.getItem('click') || false
@@ -90,8 +90,7 @@ export default function Pictures(props) {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-            <h1>{props.title}</h1>
-            <h3>Search For Astrology Picture.</h3>
+            <h3>Please Click The Drop Down For More Rover Information.</h3>
           
         </Typography>
       </CardContent>
@@ -126,8 +125,8 @@ export default function Pictures(props) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>
-        {props.explanation}
-        
+
+         {props.explanation}
           </Typography>
         </CardContent>
       </Collapse>

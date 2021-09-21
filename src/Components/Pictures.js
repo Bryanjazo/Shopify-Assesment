@@ -37,7 +37,7 @@ const ExpandMore = styled((props) => {
 
 
 export default function Pictures(props) {
-    console.log(props)
+    console.log(props, "props")
   const [expanded, setExpanded] = React.useState(false);
   const [heartStatusFalse,setHeartStatusFalse] = React.useState(false)
   const [heartStatusTrue,setHeartStatusTrue] = React.useState(true)
